@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- send fake joint values  
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+  </node>  -->
+
+<!--  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch" /> -->
+
+  <!-- RViz  -->
+  <node name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find jackal_description)/config/rviz/image_and_lidar.rviz"
+        output="screen"/> 
+
+</launch>

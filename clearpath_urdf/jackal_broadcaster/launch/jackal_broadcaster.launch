@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- load config parameters -->
+  
+  <!-- run ros nodes -->
+  <node pkg="jackal_broadcaster"   type="node"                name="jackal_tf2_broadcaster_ns"  output="screen">
+	  <rosparam command="load" file="$(find jackal_broadcaster)/config/jackal.yaml"/>
+  </node>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="world_to_odom" args="0.0 0.0 0.0 0.0 0.0 0.0 1.0 map odom" /> 
+
+</launch>
