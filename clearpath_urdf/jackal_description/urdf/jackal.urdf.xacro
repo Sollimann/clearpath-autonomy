@@ -260,8 +260,8 @@
   <xacro:include filename="$(find jackal_description)/urdf/sensors.xacro"/>  
 
   <!-- add velodyne laser / lidar -->
-  <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
-  <VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="1024" gpu="false" lasers="16" max_range="100">
+  <xacro:include filename="$(find jackal_description)/urdf/sensors/VLP-16.urdf.xacro"/>
+  <VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" samples="1024" gpu="false" lasers="16" max_range="130">
     <origin xyz="0 0 0.18" rpy="0 0 0" />
   </VLP-16>
 
@@ -269,7 +269,7 @@
   <xacro:include filename="$(find jackal_description)/urdf/sensors/kinect.urdf.xacro" />
     <jackal_kinect/>
     <joint name="kinect_mount_joint" type="fixed">
-      <origin xyz="0.1 0 0.05" rpy="0 0 0" />
+      <origin xyz="0.1 0 0.05" rpy="0 -0.36 0" />
       <parent link="front_mount" />
       <child link="kinect_mount" />
     </joint>

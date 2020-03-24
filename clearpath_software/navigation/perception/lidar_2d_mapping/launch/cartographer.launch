@@ -19,10 +19,11 @@
       type="cartographer_node" args="
           -configuration_directory
               $(find lidar_2d_mapping)/config
-          -configuration_basename jackal.lua"
+          -configuration_basename velodyne.lua"
       output="screen">
-    <remap from="points2" to="/velodyne_points" />
-    <remap from="odom" to="/jackal_velocity_controller/odom" />
+    <remap from="points2" to="/camera/depth/points" />
+    <remap from="odom" to="/odometry/filtered" />
+    <remap from="imu" to="/imu" />
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
