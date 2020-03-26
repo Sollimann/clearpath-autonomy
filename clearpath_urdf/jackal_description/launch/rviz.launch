@@ -9,7 +9,7 @@
 
   <!-- RViz  -->
   <node name="rviz" pkg="rviz" type="rviz"
-        args="-d $(find jackal_description)/config/rviz/image_and_lidar.rviz"
+        args="-d $(find jackal_description)/config/rviz/path_and_obstacles.rviz"
         output="screen"/> 
 
 </launch>
